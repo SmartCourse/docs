@@ -28,7 +28,7 @@
 <body>
   <div class="reveal">
     <div class="slides">
-      <section data-background="linear-gradient(90deg,blue,#7d2ae8)" data-background-size="cover">
+      <section data-background="linear-gradient(90deg,#00a99d,#7d2ae8)" data-background-size="cover">
         <div class="has-dark-background">
           <h2>SmartCourse</h2>
           <p style="font-size: 0.6em">Travis Britton | Alex Hinds | Nuno Das Neves | Luke Papandrea</p>
@@ -42,6 +42,7 @@
           ## Proven use cases
           * Absence of existing products.
           * Success of other community driven platforms.
+          * Basic market research
         </section>
       </section>
       <section>
@@ -58,6 +59,7 @@
 
             * 250+ Pull Requests and Issues
             * Rigorous code review process
+            * `master` branch protected to ensure quality, stability.
         </section>
         <section>
             <div style="height: 600px; margin: auto; padding: 10px;">
@@ -85,10 +87,11 @@
           <h2>Microsoft Azure</h2>
           <p>Deployment and hosting</p>
         </section>
-        <section>
-          <h2>Staging</h2>
-          <code>smartcourse-staging.azurewebsite.net</code>
-          <iframe class="iframe" src="http://smartcourse-staging.azurewebsites.net/subject"></iframe>
+        <section data-markdown>
+          ### Three environments
+          1. Development (localhost, dummy data)
+          2. Staging (hosted on azure, dummy data)
+          3. Production (hosted on azure, persistent data)   
         </section>
         <section>
             <h2>Production</h2>
@@ -96,120 +99,15 @@
           <iframe class="iframe" src="https://smartcourse.me/subject"></iframe>
         </section>
         <section>
-            <h2>Zenhub</h2>
+          <h2>Zenhub</h2>
         </section>
       </section>
       <section>
-        <section>
-          <h2>The Frontend</h2>
-        </section>
-        <section data-markdown>
-          ### Directory Structure
-
-          ```bash
-          - frontend
-          - data/
-          - images/
-          - src/
-          - styles/
-          - tests/
-          - index.html
-          - package.json
-          ```
-        </section>
-        <section data-markdown>
-          ### Example Code
-
-          * In `/src` you'll see an example app structure.
-          * You can reuse as much of this code as you want.
-
-          ```js
-          // eg. Deals with uploading a local image
-          function postImage(event) {
-          const [ file ] = event.target.files;
-
-          const validFileTypes = [ 'image/jpeg', 'image/png', 'image/jpg' ]
-          const valid = validFileTypes.find(type => type === file.type);
-          }
-          ```
-        </section>
-        <section data-markdown>
-          ### Running Your App
-          * Spin up the frontend server `npm start`
-          * Go to `localhost:8080`
-        </section>
-        <section>
-          <h2>You should see this:</h2>
-          <iframe style="width: 80%; height: 50%;" src="http://localhost:8080"></iframe>
-        </section>
         <section data-markdown>
           ### Tips
           * To start develop using the static data in frontend
           * Transition slowly to the backend development server
         </section>
-      </section>
-      <section>
-        <section data-background="linear-gradient(90deg,#00c4cc,#7d2ae8)" data-background-size="cover">
-          <div class="has-dark-background">
-            <h2>Backend</h2>
-          </div>
-        </section>
-        <section data-markdown>
-          ### Directory Structure
-          ```bash
-          - backend
-          - run.py
-          - app.py
-          - README.md
-          ```
-        </section>
-        <section data-markdown>
-          ### Getting Started
-
-          ```bash
-          cd backend
-          # create a sandbox for the backend
-          virtualenv -p /usr/local/bin/python3 env
-          # enter sandbox
-          source env/bin/activate
-          # set up sandbox
-          pip install -r requirements.txt
-          # run backend! Will run on port 5000.
-          # go to http://127.0.0.1:5000/ to see the docs!
-          python run.py
-          ```
-        </section>
-        <section>
-          <div style="width: 250px; height: 250px; margin: auto;">
-            <img class="plain" src="images/swagger.png">
-          </div>
-          <h3>API Docs</h3>
-        </section>
-
-        <section data-markdown>
-          ## Understand the endpoints
-        </section>
-
-        <section data-markdown>
-          ## Backend is a blackbox
-        </section>
-      </section>
-      <section>
-        <section data-markdown>
-          ## Strategy for doing Assignment
-        </section>
-        <section data-markdown>
-            ### Approach
-            1. Get something basic working with the data provided in `/frontend/data`
-            2. Once you've got something basic working, start hitting the `/dummy/` API, which doesn't require authentication. See docs.
-            3. Finally, once you've got that working, transition over to use the real API.
-        </section>
-      </section>
-      <section data-background="linear-gradient(90deg,blue,#7d2ae8)" data-background-size="cover">
-        <div class="has-dark-background">
-          <h2>The end</h2>
-          <p style="font-size: 0.6em">Big thanks to Andrew for allowing us to get this going - and Zain Afzal for driving this thing forward. Good luck for the assignment. Thanks.</p>
-        </div>
       </section>
     </div>
   </div>
